@@ -1,5 +1,6 @@
 public abstract class Person {
-    private float xPos, yPos, position, size;
+    private float xPos, yPos, size;
+    private World world;
 
     public float getxPos() {
         return xPos;
@@ -17,12 +18,12 @@ public abstract class Person {
         this.yPos = yPos;
     }
 
-    public float getPosition() {
-        return position;
+    public World getWorld() {
+        return world;
     }
 
-    public void setPosition(float position) {
-        this.position = position;
+    public void setWorld(World world) {
+        this.world = world;
     }
 
     public float getSize() {
@@ -33,9 +34,7 @@ public abstract class Person {
         this.size = size;
     }
 
-    public void move(float xDistance, float yDistance) {
-        setxPos(getxPos()+xDistance);
-        setyPos(getyPos()+yDistance);
-    }
+    public abstract void move();
+    public abstract void display();
 
 }
