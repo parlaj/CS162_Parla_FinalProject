@@ -1,5 +1,12 @@
+/**
+ * Defines a Human class as a subclass of Person.
+ * @author Jacob Parla
+ * @version 1.0
+ * @since 06/07/2020
+ */
 public class Human extends Person {
-    int color = 255;
+
+    Particle p;
     public Human() {
     }
     public Human(World world, float xPos, float yPos, float size) {
@@ -7,17 +14,12 @@ public class Human extends Person {
         setxPos(xPos);
         setyPos(yPos);
         setSize(size);
-    }
-
-    @Override
-    public void display() {
-        this.getWorld().fill(color);
-        this.getWorld().circle(this.getxPos(), this.getyPos(), 25);
-
+        setRadius(size/2);
     }
 
     @Override
     public void move() {
+
         int decision = (int) this.getWorld().random(100);
         if (decision < 20) {
             setxPos(getxPos()+1);

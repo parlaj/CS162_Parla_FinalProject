@@ -1,5 +1,11 @@
+/**
+ * Defines a Zombie class that is a subclass of Person.
+ * @author Jacob Parla
+ * @version 1.0
+ * @since 06/07/2020
+ */
 public class Zombie extends Person {
-    int color = 95;
+
     public Zombie() {
     }
     public Zombie(World world, float xPos, float yPos, float size) {
@@ -7,13 +13,10 @@ public class Zombie extends Person {
         setxPos(xPos);
         setyPos(yPos);
         setSize(size);
-    }
-    @Override
-    public void display() {
-        this.getWorld().fill(color);
-        this.getWorld().circle(this.getxPos(), this.getyPos(), 25);
+        setRadius(size/2);
 
     }
+
 
     @Override
     public void move() {
